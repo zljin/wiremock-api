@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/holiday"
+  },
+  "response": {
+    "status": 200,
+    "fixedDelayMilliseconds": 200,
+    "jsonBody": {
+      "data": {
+        "currentYear": "2025",
+        "currentMonthList": [
+          "202501",
+          "202502",
+          "202503",
+          "202504",
+          "202505",
+          "202506",
+          "202507"
+        ]
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
