@@ -11,13 +11,13 @@ public class RamdomMatcherExtension extends RequestMatcherExtension {
 
     @Override
     public String getName() {
-        return "RamdomMatcher";
+        return "RamdomMatcherExtension";
     }
 
     @Override
     public MatchResult match(Request request, Parameters parameters) {
         int weight = parameters.getInt("weight");
-        int rand = ThreadLocalRandom.current().nextInt(0,100);
-        return MatchResult.of(rand<weight);
+        int rand = ThreadLocalRandom.current().nextInt(0, 100);
+        return MatchResult.of(rand < weight);
     }
 }

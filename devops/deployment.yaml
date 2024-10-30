@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wiremock-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wiremock-api
+  template:
+    metadata:
+      labels:
+        app: wiremock-api
+    spec:
+      containers:
+        - name: corejava
+          image: "127.0.0.1:5000/wiremock-api:latest"
+          imagePullPolicy: IfNotPresent
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: wiremock-api-service
+spec:
+  selector:
+    app: wiremock-api
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 8090
